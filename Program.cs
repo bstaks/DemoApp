@@ -8,6 +8,8 @@ namespace DemoApp
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello Sprint1");
+            B objB = new B();
+            
         }
     }
 }
