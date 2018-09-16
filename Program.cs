@@ -8,7 +8,9 @@ namespace DemoApp
         {
             Console.WriteLine("Hello World!");
             Console.WriteLine("Hello Sprint1");
-            A objB = new B();
+            B objB = new B();
+
+           // AbstractCustomer abstractCustomerObj = new AbstractCustomer();
             
         }
     }

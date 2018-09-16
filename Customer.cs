@@ -1,5 +1,6 @@
 using System;
-
+namespace DemoApp
+{
 class A
 {
     static A()
@@ -24,4 +25,5 @@ class B : A
     {
         Console.WriteLine($"detfault constructor call B");
     }
+}
 }
