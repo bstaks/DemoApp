@@ -1,0 +1,1383 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta name="theme-color" content="#323754">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"9b2cefefd1","agent":"","transactionName":"MlwDZxBYVxUHWkNcVwsWJ0YMWk0PCVcYVFQJWBRHChdYBQVWQltMS08IVhVKAwoJXl5b","applicationID":"33578042","errorBeacon":"bam.nr-data.net","applicationTime":63}</script>
+        <meta name="description" content="  HackerEarth is a global hub of 2M+ developers. We also help companies fast-track their growth through our best-in-class technical recruitment software and innovation management platform." >
+        <link rel="canonical" href="https://www.hackerearth.com/login/" />
+        <meta name="msvalidate.01" content="1BF418E510B5A17A2D71685C571BF4EB" />
+
+
+        <script>
+          (function() {
+              if (window.BOOMR && window.BOOMR.version) {
+                  return;
+              }
+              var dom, doc, where, iframe = document.createElement("iframe"),
+                  win = window;
+
+              function boomerangSaveLoadTime(e) {
+                  win.BOOMR_onload = (e && e.timeStamp) || new Date().getTime();
+              }
+              if (win.addEventListener) {
+                  win.addEventListener("load", boomerangSaveLoadTime, false);
+              } else if (win.attachEvent) {
+                  win.attachEvent("onload", boomerangSaveLoadTime);
+              }
+
+              iframe.src = "javascript:false";
+              iframe.title = "";
+              iframe.role = "presentation";
+              (iframe.frameElement || iframe).style.cssText = "width:0;height:0;border:0;display: none;";
+              where = document.getElementsByTagName("script")[0];
+              where.parentNode.insertBefore(iframe, where);
+
+              try {
+                  doc = iframe.contentWindow.document;
+              } catch (e) {
+                  dom = document.domain;
+                  iframe.src = "javascript:var d=document.open();d.domain='" + dom + "';void(0);";
+                  doc = iframe.contentWindow.document;
+              }
+              doc.open()._l = function() {
+                  var js = this.createElement("script");
+                  if (dom) this.domain = dom;
+                  js.id = "boomr-if-as";
+                  js.src = "https://s.go-mpulse.net/boomerang/" +
+                      "QKZWA-3BVYP-7W6XK-6HKWZ-EFFZ4";
+                  BOOMR_lstart = new Date().getTime();
+                  this.body.appendChild(js);
+              };
+              doc.write('<body onload="document._l();">');
+              doc.close();
+          })();
+        </script>
+
+
+
+
+<meta name="google-site-verification" content="ozqyeStBcz4eehbY9Ohb_IUQcA4y8BKzzDCT-H1QPPc" />
+
+
+
+
+        <!-- google analytics start -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-34729975-1', 'auto');
+            ga('require', 'displayfeatures');
+
+            ga('send', 'pageview');
+        </script>
+        <!-- google analytics end -->
+
+
+
+
+
+        <!-- Google Tag Manager -->
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PBHB3B9');
+        </script>
+        <!-- End Google Tag Manager -->
+
+
+
+        <title>  Log In | HackerEarth  </title>
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<!-- Facebook tags -->
+<meta property="og:title" content="HackerEarth | Log In"/>
+<meta property="og:description" content="HackerEarth is the largest network of developers around the globe, helping them connect with their peers discover the best job opportunities."/>
+<meta property="og:image" content="https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_identity.png" />
+<meta property="og:url" content="https://www.hackerearth.com/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/"/>
+<meta property="og:site_name" content="HackerEarth"/>
+<meta property="og:type" content="website"/>
+<!-- end Facbook tags -->
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@HackerEarth"/>
+<meta name="twitter:url" content="https://www.hackerearth.com/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/"/>
+<meta name="twitter:title" content="HackerEarth | Log In"/>
+<!-- end Twitter tags -->
+
+
+
+        <link rel="shortcut icon" href="https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_identity.png" type="image/x-icon">
+
+
+        <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/base/base_common_combined.css?vrsn=45"/>
+        <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/js/tooltip/tipTip.css?vrsn=0"/>
+        <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/offline/offline-theme-slide.css?vrsn=0"/>
+        <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/font-awesome-4.7.0/css/font-awesome.min.css?vrsn=0"/>
+        <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/opensans/opensans.css?vrsn=0"/>
+        <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/css/unicons.css?vrsn=1"/>
+
+
+
+
+
+
+
+        <!-- Make the static variable available for all js files -->
+        <script>
+            var STATIC_URL = "https://static-fastly.hackerearth.com/static/";
+        </script>
+
+        <!-- Store CSRF_COOKIE -->
+        <script>
+            var CSRF_COOKIE_USED = "True";
+            var CSRF_COOKIE = "qDVBbUOs1y7oKAzESPYrPqeYMxaUlhVbyRBfj62I2ybozgHH4fsPqDyZGBeTh0r1";
+        </script>
+
+
+    <link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/hackathon/login.css?vrsn=3"/>
+
+
+    </head>
+
+    <body >
+
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/base/notification_toast.css?vrsn=2"/>
+<div class="notification-toast-container notification-top-center regular">
+    <div class="notification-errors">
+        <p id="notification-auth-error" class="error-item hidden no-margin">
+            <span class="fa fa-times less-margin-right"></span>Ensure that you are logged in and have the required permissions to access the test.
+        </p>
+        <p id="notification-server-error" class="error-item hidden no-margin">
+            <span class="fa fa-times less-margin-right"></span>A server error has occurred. Please refresh the page or try after some time.
+        </p>
+        <p id="notification-error" class="error-item hidden no-margin">
+            <span class="fa fa-times less-margin-right"></span>An error has occurred. Please refresh the page or try after some time.
+        </p>
+        <p id="notification-custom-error" class="error-item hidden no-margin"></p>
+
+    </div>
+</div>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/notification-toast.js?vrsn=4" crossorigin="anonymous" defer></script>
+
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBHB3B9"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+
+
+        <!-- Placeholder for any alert message on the site -->
+
+        <div id="alert-message-holder">
+
+
+            <!-- put a dummy message box so that it can be used when cloning
+                 and adding more -->
+            <div class="alert-message hidden">
+                <div class="message float-left"></div>
+                <div class="cross-holder float-left"><span class="small-cross sprites"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- end alert-message-holder -->
+
+        <!-- Placeholder for any error message on the site -->
+
+        <div id="error-message-holder">
+
+
+            <!-- put a dummy message box so that it can be used when cloning
+                 and adding more -->
+            <div class="error-message hidden">
+                <div class="message float-left"></div>
+                <div class="cross-holder float-left"><span class="small-cross sprites"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div> <!-- end error-message-holder -->
+
+
+
+
+    <div id="top-prompt-container" class="hidden prompt-container"></div>
+    <div id="right-prompt-container" class="hidden prompt-container"></div>
+    <div id="center-modal-prompt-container" class="hidden prompt-container"></div>
+
+
+
+        <header class="header">
+            <i class="fa fa-bars mobile-menu-btn"></i>
+            <nav class="navigation">
+
+                <a href="https://www.hackerearth.com" class="logo logo-h-terminal  no-underline float-left track-header-logo"></a>
+
+
+
+                <ul class="nav-bar no-padding float-left tablet-hide">
+                    <!-- challenges page -->
+                    <li id="challenges" class="nav-bar-menu "><a class="track-header-challenges" href="https://www.hackerearth.com/challenges/">CHALLENGES</a></li>
+                    <!-- hackathons page -->
+
+                    <!-- practice page -->
+                    <li id="problems" class="nav-bar-menu "><a class="track-header-problems" href="https://www.hackerearth.com/practice/">PRACTICE</a></li>
+                    <!-- companies page -->
+                    <li id="companies" class="nav-bar-menu "><a class="track-header-companies" href="https://www.hackerearth.com/companies/">COMPANIES</a></li>
+                </ul>
+                <ul class="nav-bar right-nav-bar no-padding float-right tablet-hide">
+
+
+                    <li id="searchbar">
+                        <div id="search-icon-container" class="float-left">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <input id="searchbar-input" class="float-left" type="text" value="" name="q" autocomplete="off" spellcheck="false" placeholder="Search developers, problems, etc" ajax1="/search/AJAX/search/" ajax2="/search/search-results/" ></input>
+                        <div id="search-dropdown"></div>
+                    </li>
+
+
+
+                    <li id="header-circle" class="">
+                        <a class="tool-tip notification-icon" title="Circle" href="https://www.hackerearth.com/circles/">
+                            <img src="https://static-fastly.hackerearth.com/static/circles/circle-header.png" alt="circle" class="margin-top-8 header-circle-img"/>
+                        </a>
+                    </li>
+
+
+
+
+
+
+
+
+
+
+
+                    <li class="nav-bar-menu login-menu-btn"><a target="login-modal" class="track-header-login show-modal">LOGIN</a></li>
+                    <li class="nav-bar-menu signup-menu-btn"><a target="login-modal" class="track-header-signup show-modal show-signup-in-modal">SIGN UP</a></li>
+
+
+                    <div class="clear"></div>
+                </ul> <!-- nav-bar -->
+                <div class="clear"></div>
+
+            </nav> <!-- navigation -->
+
+            <i class="fa fa-filter challenge-filter-btn hidden"></i>
+
+        </header> <!-- header -->
+
+
+     <style>
+  #gdpr-modal {
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+<div id="gdpr-modal" class="modal-window smaller-modal hidden">
+
+
+<style>
+  #gdpr-modal-content {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #gdpr-modal-content .modal-header {
+    padding: 50px 55px 35px 55px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #gdpr-modal-content .modal-footer {
+    padding: 25px 55px 90px;
+  }
+
+  #gdpr-modal-content .modal-content {
+    padding: 0 55px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #gdpr-modal-content .modal-footer .checkbox-row {
+    font-size: 16px;
+    display: inline-flex;
+  }
+
+  #gdpr-modal-content a {
+    color: #0099ff;
+  }
+
+  #gdpr-modal-content .button.disabled {
+    background: #f5f6f6 !important;
+  }
+</style>
+
+<div id="gdpr-modal-content">
+
+<div class="modal-header">HackerEarth's Privacy Policy and Terms of Service</div>
+  <div class="modal-content">
+      We care about your data privacy. HackerEarth uses the information that you provide to contact you about relevant content, products, and services. <br /> <br />
+
+      Our <a href="/privacy/" target="_blank">Privacy Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a> will help you understand that you are in control of your data at HackerEarth.
+  </div>
+  <div class="modal-footer">
+    <div class="margin-bottom-15 regular checkbox-row">
+      <input type="checkbox" name="gdpr-tnc" />
+      I have read and I agree.
+    </div>
+    <div class="">
+      <input type="submit" name="submit" value="Proceed" class="button btn-blue fontawesome btn-largest disabled large" id="gdpr-submit" />
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+    <div id="comment-share-modal" class="modal-window small-modal">
+        <div class="modal-header">
+            Comment permalink
+        </div>
+        <div class="modal-content">
+            <div class="comment-share-wrapper align-center">
+                <textarea class="comment-share-text" type="textbox" rows="4" readonly="readonly" onclick="this.select();"></textarea>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- live events widget -->
+    <div id="live-events-trigger-data"></div>
+
+
+    <!-- This is the center page which has a fixed width of 1100px -->
+
+<div class="responsive-page">
+    <div class="fold login-fold">
+        <div class="responsive-container align-center">
+            <div class="nice-box inline-block">
+                <h1 class="dark">Log In to HackerEarth</h1>
+
+                <div class="sign-up-form-container inline-block v-middle align-left">
+
+
+                    <!-- signup form -->
+                    <form class="login" method="POST">
+                        <input type='hidden' name='csrfmiddlewaretoken' value='SwQQszWiyrcK2on5iphsIeNbCYl0ZLW60KwuALayzrgKR4v8uPLQjr7cw2pZVusW' />
+
+
+                        <input type="hidden" name="next" value="/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/" />
+
+
+                        <div class="profile-wrapper">
+                            <input id="id_login" name="login" placeholder="Username or e-mail" type="text" required />
+
+                            <i class="fa fa-user light"></i>
+                        </div>
+                        <div class="profile-wrapper">
+                            <input id="id_password" name="password" placeholder="Password" type="password" required />
+
+                            <i class="fa fa-lock light"></i>
+                        </div>
+
+                        <div class="profile-wrapper less-margin-2 float-left">
+                            <label class="small dark" for="id_remember">
+                                <input id="id_remember" name="remember" type="checkbox" />
+                                Remember me
+                            </label>
+                            <div class="clear"></div>
+                        </div>
+                        <a href="/password/reset/" class="foot-note less-margin-2 track-forgot-password float-right small" tabindex="-1">Forgot password?</a>
+                        <div class="clear"></div>
+                        <input class="track-login sign-up-btn-alt btn-blue full-width standard-margin weight-700" type="submit" name="signin" value="Log In"/>
+                        <div class="dark small less-margin align-right">
+                            Don't have an account? <a href="/signup/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&source=signup">Sign Up</a>
+                        </div>
+                    </form>
+                </div><!-- end sign-up-form-container -->
+                <div class="modified-sign-up-container inline-block v-top">
+
+
+                    <a url='/zeus/facebook/login/?display=popup&next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=facebook&source=signup&purpose=login' title="Facebook" class="sign-up-btn btn-facebook show-popup google-btn-dimension sign-up-btn-modified" minimal="true">
+
+                        <div class="btn-icon float-left"><i class="fa fa-facebook"></i></div>
+                        <div class="btn-text float-left">Log In with Facebook</div>
+                        <div class="clear"></div>
+                    </a>
+
+
+                    <a url='/zeus/github/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=github&source=signup&purpose=login' title="Github" class="sign-up-btn btn-github show-popup google-btn-dimension sign-up-btn-modified" minimal="true">
+
+                        <div class="btn-icon float-left"><i class="fa fa-github"></i></div>
+                        <div class="btn-text float-left">Log In with Github</div>
+                        <div class="clear"></div>
+                    </a>
+
+
+                    <a url='/zeus/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=google&source=signup&purpose=login' title="Google" class="sign-up-btn btn-google show-popup google-btn-dimension sign-up-btn-modified" minimal="true">
+
+                        <div class="btn-icon float-left">
+                            <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/google_logo.png" alt="Google">
+                        </div>
+                        <div class="btn-text float-left roboto-font-family">Sign in with Google</div>
+                        <div class="clear"></div>
+                    </a>
+
+                </div><!-- end sign-up-container -->
+                <div class="clear-both"> </div>
+            </div> <!-- end nice-box -->
+        </div><!-- end responsive-container -->
+    </div><!-- end login-fold -->
+</div><!-- end responsive-page -->
+
+
+    <!-- include modal window for login/signup -->
+
+
+
+<div id="login-modal" class="modal-window smaller-modal hidden">
+    <div class="modal-header">
+        <div class="login-form align-center larger heading">Log in</div>
+        <div class="signup-form-div hidden align-center larger heading">Sign Up</div>
+        <div class="password-reset hidden align-center larger heading">Reset Password</div>
+    </div>
+    <div class="modal-content">
+
+        <div class="login-form">
+
+
+
+
+<div class="modal-social-login align-center">
+
+
+    <a url='/zeus/facebook/login/?display=popup&next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=facebook&source=login&purpose=login' title="Facebook" class="button btn-facebook btn-medium show-popup inline-block margin-top-8 less-margin-right less-margin-bottom" minimal="true" style="width: 41%">
+
+    <i class="fa fa-facebook"></i> <span class="regular less-margin-left">Log in with Facebook</span>
+    </a>
+
+
+    <a url='/zeus/github/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=github&source=login&purpose=login' title="Github" class="button btn-github btn-medium show-popup inline-block margin-top-8 less-margin-right" minimal="true" style="width: 43%">
+
+    <i class="fa fa-github"></i> <span class="regular less-margin-left">Log in with Github</span>
+    </a>
+
+
+    <a url='/zeus/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=google&source=login&purpose=login' title="Google" class="button btn-google btn-medium show-popup margin-top-8 less-margin-right sign-up-btn-modified" minimal="true" style="display: block">
+
+    <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/google_logo.png" alt="Google" style="vertical-align: middle">
+    <span class="regular medium-margin-left roboto-font-family">Sign in with Google</span>
+    </a>
+
+
+    <div class="clear"></div>
+</div>
+<div class="align-center standard-margin word-with-line-head">
+    <div class="word-with-line inline-block">
+        <span class="large light">or</span>
+    </div>
+</div>
+
+
+            <form id="modal-login-form" name="login-form" method="POST" class="ajax-form medium-margin" ajax="/AJAX/login/">
+
+
+
+
+
+
+
+
+
+
+        <div class="wrapper small-wrapper">
+
+            <input id="id_login" name="login" placeholder="Username or Email" type="text" required />
+        </div>
+        <div class="wrapper small-wrapper">
+            <input id="id_password" name="password" placeholder="Password" type="password" required />
+        </div>
+
+
+    <input type="hidden" name="next" value="/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/"/>
+     <div>
+         <a href="#" class="link-3 show-hide-many float-right" show="password-reset" hide="login-form">Forgot Password?</a>
+        <div class="clear"></div>
+    </div>
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Logging In.." value="Log in &#xf0a9;" class="button btn-blue fontawesome btn-largest weight-600 large"/>
+    </div>
+
+
+    <script type="text/javascript">
+        try{
+            grecaptcha.render('nocaptcha-recaptcha', {
+                'sitekey' : ''
+            });
+        }
+        catch(err){}
+    </script>
+
+
+
+
+            </form>
+
+            <div class="align-center dark regular standard-margin dont-have-account">
+                Don't have an account? <a href="#" class="link-13 show-hide-many regular" show="signup-form-div" hide="login-form"> Sign up</a>
+            </div>
+
+        </div>
+
+        <div class="signup-form-div hidden">
+
+
+
+
+<div class="modal-social-signup align-center">
+
+
+    <a id="social-login-button-fb" url='/zeus/facebook/login/?display=popup&next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=facebook&source=login&purpose=signup' title="Facebook" class="button btn-facebook btn-medium show-popup inline-block margin-top-8 less-margin-right hidden" minimal="true">
+
+    <i class="fa fa-facebook"></i> <span class="regular weight-600 less-margin-left">Facebook</span>
+    </a>
+    <a class="button btn-facebook btn-medium inline-block margin-top-8 less-margin-right less-margin-bottom social-login-button social-login-button-fb show-modal"
+    target="gdpr-modal">
+    <i class="fa fa-facebook"></i> <span class="regular less-margin-left">Sign up with Facebook</span>
+    </a>
+
+
+    <a id="social-login-button-github" url='/zeus/github/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=github&source=login&purpose=signup' title="Github" class="button btn-github btn-medium inline-block margin-top-8 less-margin-right show-popup hidden" minimal="true">
+
+    <i class="fa fa-github"></i> <span class="regular weight-600 less-margin-left">Github</span>
+    </a>
+    <a class="button btn-github btn-medium inline-block margin-top-8 less-margin-right social-login-button social-login-button-github show-modal"
+    target="gdpr-modal">
+    <i class="fa fa-github"></i> <span class="regular less-margin-left">Sign up with Github</span>
+    </a>
+
+
+    <a id="social-login-button-g" url='/zeus/google/login/?next=%2Fsocial-login-complete%2F%3Forigin_protocol%3Dhttps%26origin_host%3Dwww.hackerearth.com%26redirect%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/&update=google&source=login&purpose=signup' title="Google" class="button btn-google btn-medium inline-block margin-top-8 less-margin-right show-popup hidden" minimal="true">
+
+    <i class="fa fa-google-plus"></i> <span class="regular weight-600 less-margin-left">Google</span>
+    </a>
+    <a class="button btn-google btn-medium margin-top-8 less-margin-right social-login-button social-login-button-g show-modal sign-up-btn-modified" style="display: block"
+    target="gdpr-modal">
+    <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/google_logo.png" alt="Google" style="vertical-align: middle">
+    <span class="regular medium-margin-left roboto-font-family">Sign up with Google</span>
+    </a>
+
+
+    <div class="clear"></div>
+</div>
+<div class="align-center standard-margin word-with-line-head">
+    <div class="word-with-line inline-block">
+        <span class="large light">or</span>
+    </div>
+</div>
+
+
+
+            <form id="modal-signup-form" name="signup-form" method="POST" class="ajax-form medium-margin" ajax="/AJAX/hackerearth/signup/?source=login&next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">
+
+
+
+
+
+
+
+
+
+        <div class="wrapper small-wrapper float-left">
+            <input id="id_first_name" maxlength="30" name="first_name" placeholder="First Name" type="text" required />
+        </div>
+
+        <div class="wrapper small-wrapper float-right">
+            <input id="id_last_name" maxlength="30" name="last_name" placeholder="Last Name" type="text" />
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="wrapper small-wrapper">
+            <input id="id_email" maxlength="75" name="email" placeholder="Email" type="text" required />
+        </div>
+        <div class="wrapper small-wrapper">
+            <input id="id_password" name="password" placeholder="Password" type="password" required />
+        </div>
+
+
+    <div class="align-center medium-margin">
+        <button id="signup-start-now" class="button btn-blue fontawesome btn-largest weight-600 large disabled" target="gdpr-modal">Start Now</button>
+    </div>
+
+    <style>
+  #gdpr-modal {
+    position: absolute;
+    bottom: 0;
+  }
+</style>
+<div id="gdpr-modal" class="modal-window smaller-modal hidden">
+
+
+<style>
+  #gdpr-modal-content {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #gdpr-modal-content .modal-header {
+    padding: 50px 55px 35px 55px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #gdpr-modal-content .modal-footer {
+    padding: 25px 55px 90px;
+  }
+
+  #gdpr-modal-content .modal-content {
+    padding: 0 55px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #gdpr-modal-content .modal-footer .checkbox-row {
+    font-size: 16px;
+    display: inline-flex;
+  }
+
+  #gdpr-modal-content a {
+    color: #0099ff;
+  }
+
+  #gdpr-modal-content .button.disabled {
+    background: #f5f6f6 !important;
+  }
+</style>
+
+<div id="gdpr-modal-content">
+
+<div class="modal-header">HackerEarth's Privacy Policy and Terms of Service</div>
+  <div class="modal-content">
+      We care about your data privacy. HackerEarth uses the information that you provide to contact you about relevant content, products, and services. <br /> <br />
+
+      Our <a href="/privacy/" target="_blank">Privacy Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a> will help you understand that you are in control of your data at HackerEarth.
+  </div>
+  <div class="modal-footer">
+    <div class="margin-bottom-15 regular checkbox-row">
+      <input type="checkbox" name="gdpr-tnc" />
+      I have read and I agree.
+    </div>
+    <div class="">
+      <input type="submit" name="submit" value="Proceed" class="button btn-blue fontawesome btn-largest disabled large" id="gdpr-submit" />
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+            </form>
+            <div class="align-center dark regular standard-margin dont-have-account">
+                Have an account? <a href="#" class="link-13 show-hide-many regular" show="login-form" hide="signup-form-div"> Log in</a>
+            </div>
+        </div>
+
+        <div class="password-reset hidden">
+            <form name="password-reset" method="POST" class="ajax-form" ajax="/AJAX/password/reset/?next=/login/">
+
+
+
+
+
+
+    <p class="dark large"> A password reset link will be sent to the following email id</p>
+
+    <div class="wrapper">
+
+        <input id="id_email" name="email" placeholder="Email" size="30" type="text" required />
+    </div>
+
+    <div class="align-center medium-margin">
+        <input type="submit" name="submit" clicked="Sending.." value="Send Password Reset Link" class="button btn-blue btn-largest weight-600 large"/>
+    </div>
+
+
+            </form>
+        </div>
+
+    </div>
+    <div class="gdpr-modal-content hidden">
+
+
+<style>
+  #gdpr-modal-content {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  #gdpr-modal-content .modal-header {
+    padding: 50px 55px 35px 55px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  #gdpr-modal-content .modal-footer {
+    padding: 25px 55px 90px;
+  }
+
+  #gdpr-modal-content .modal-content {
+    padding: 0 55px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  #gdpr-modal-content .modal-footer .checkbox-row {
+    font-size: 16px;
+    display: inline-flex;
+  }
+
+  #gdpr-modal-content a {
+    color: #0099ff;
+  }
+
+  #gdpr-modal-content .button.disabled {
+    background: #f5f6f6 !important;
+  }
+</style>
+
+<div id="gdpr-modal-content">
+
+<div class="modal-header">HackerEarth's Privacy Policy and Terms of Service</div>
+  <div class="modal-content">
+      We care about your data privacy. HackerEarth uses the information that you provide to contact you about relevant content, products, and services. <br /> <br />
+
+      Our <a href="/privacy/" target="_blank">Privacy Policy</a> and <a href="/terms-of-service/" target="_blank">Terms of Service</a> will help you understand that you are in control of your data at HackerEarth.
+  </div>
+  <div class="modal-footer">
+    <div class="margin-bottom-15 regular checkbox-row">
+      <input type="checkbox" name="gdpr-tnc" />
+      I have read and I agree.
+    </div>
+    <div class="">
+      <input type="submit" name="submit" value="Proceed" class="button btn-blue fontawesome btn-largest disabled large" id="gdpr-submit" />
+    </div>
+  </div>
+</div>
+
+    </div>
+</div>
+
+
+
+    <!-- override this block where we do not want the footer -->
+
+
+
+
+
+
+
+
+
+<div class="footer-large">
+    <div class="content align-center">
+        <div class="footer-sub-container">
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/team/" target="_blank">About Us</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/sprint/" target="_blank">Innovation Management</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/recruit/" target="_blank">Technical Recruitment</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/university/" target="_blank">University Program</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/docs/wiki/developers/solution-guide/" target="_blank">Developers Wiki</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="http://blog.hackerearth.com/" target="_blank">Blog</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/press/" target="_blank">Press</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/companies/hackerearth/jobs/" target="_blank">Careers</a>
+            </div>
+            <div class="section">
+                <a class="footer-link" href="https://www.hackerearth.com/reach-us/" target="_blank">Reach Us</a>
+            </div>
+
+        </div>
+    </div> <!-- content -->
+    <div class="clear"></div>
+    <div class="footer-bottom-container lighter small">
+        <div class="footer-bottom">
+
+            <img src="https://static-fastly.hackerearth.com/static/hackerearth/images/logo/HE_identity.png" />
+
+            <div class="float-right">
+                <span>
+                    <span>Site Language: </span>
+                    <select id="global-locale-switcher" class="nice-select" ajax_url="/users/update-locale-setting/" page_url="/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/" onchange="changeUserLocale(this, 'en-us', false)">
+
+
+                        <option value="ru" url="/ru/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">??????? ????</option>
+
+
+
+                        <option value="fr" url="/fr/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">Français</option>
+
+
+
+                        <option value="zh" url="/zh/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">??</option>
+
+
+
+                        <option value="en-us" selected="selected" url="/en-us/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">English</option>
+
+
+
+                        <option value="pt-br" url="/pt-br/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">Português</option>
+
+
+
+                        <option value="ja" url="/ja/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/">???</option>
+
+
+                    </select>
+                </span>
+                <span class="separator">|</span>
+                <span><a href="https://www.hackerearth.com/terms-of-service/">Terms and Conditions</a></span>
+                <span class="separator">|</span>
+                <span><a href="https://www.hackerearth.com/privacy/">Privacy</a></span>
+                <span class="separator">|</span>
+                <span class="align-right float-right">&copy; 2019 HackerEarth</span>
+            </div>
+        </div>
+    </div><!-- footer-bottom-container -->
+</div>
+
+
+
+
+
+    <div class="expand-box" id="recruiter-box">
+        <div class="down-arrow"></div>
+        <ul class="no-margin">
+
+
+
+            <a href="/logout/?next=/login/%3Fnext%3D/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/"><li>Logout</li></a>
+        </ul>
+    </div>
+
+
+
+    <!-- Include notifications box -->
+
+
+
+
+<div class="expand-box" id="notifications-box">
+    <div class="down-arrow"></div>
+    <div class="notifications-title-container">
+        <div class="float-left weight-600">Notifications</div>
+        <div class="float-right">
+            <a href="#" ajax="https://www.hackerearth.com/notifications/AJAX/mark-all-read/" class="notif-mark-all-read link smaller clicky-ajax">Mark All as Read</a>
+        </div>
+        <div class="clear"></div>
+    </div> <!-- notifications-title-container -->
+
+    <div class="notifications-container nice-scrollbar" id="notifications-container">
+    </div> <!-- notifications-container -->
+
+    <div class="smaller caps weight-600 align-center less-margin-2 less-margin-2-bottom">
+        <a class="link" href="https://www.hackerearth.com/notifications/">View All Notifications</a>
+    </div>
+</div> <!-- notifications-box -->
+
+
+    <!-- Load notification icon with unread count -->
+    <div id="header-notif-icon-trigger" class="load-pagelet hidden" target="header-notif-icon" ajax="/notifications/pagelets/header-notif-icon-count/" show-loader="false"></div>
+
+
+    <!-- Load live events widget -->
+    <div id="live-events-trigger" class="load-pagelet hidden" target="live-events-trigger-data" ajax="/AJAX/live_events_widget_count/" show-loader="false"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="bigpipe-json" class="hidden">
+
+        </div>
+
+        <!-- Store any json returned for bigpipe -->
+        <div id="user-prompt-json" class="hidden">
+
+        </div>
+
+        <!-- Store any html returned for feedback popup -->
+        <div id="user-feedback-popup" class="hidden"></div>
+
+
+        <!-- realtime host -->
+        <div id="realtime-host" class="hidden">realtime.hackerearth.com</div>
+        <!-- realtime port -->
+        <div id="realtime-port" class="hidden">80</div>
+
+        <!-- client name for updating parts of page in realtime -->
+        <div id="pusher-channel-name-0" class="hidden">cc8bb113e649123116cbffccec2cad3ca00cac99</div>
+
+
+
+            <div id="common-notification">
+            </div>
+
+        <!-- pusher app key -->
+        <div id="pusher-app-key" class="hidden">58a29e5cae2309f04b28</div>
+
+        <!-- pusher auth url -->
+        <div id="pusher-auth-url" class="hidden">/realtime/pusher/auth/</div>
+
+        <!-- ping url for user presence -->
+        <div id="ghost-ping-url" class="hidden" ajax="/ghost/ping/"></div>
+
+
+
+
+        <!-- url to get active lab features -->
+
+        <!-- All the scripts go here -->
+        <script>
+            var CURRENT_PATH = "https://www.hackerearth.com/login/?next=/challenges/competitive/march-circuits-19/algorithm/does-it-divide-3c60b8fb/submission/24747149/";
+            var HISTORY = '';
+
+            // Make code constants available globally in JS
+            var MAP_LANG_TO_NAME = {"SCALA_2118": "Scala 2.11.8", "LUA": "Lua", "PASCAL": "Pascal", "CSHARP": "C#", "CPP": "C++", "PYTHON3": "Python 3", "POSTGRESQL": "PostgreSQL", "KOTLIN": "Kotlin", "SCALA": "Scala", "PERL": "Perl", "HASKELL": "Haskell", "D": "D", "CPP14": "C++14", "R": "R(RScript)", "CPP11": "C++11", "GO": "Go", "RUBY": "Ruby", "BASH": "Bash", "GROOVY": "Groovy", "LOLCODE": "LOLCODE", "LISP": "Lisp", "Text": "Text", "WHENEVER": "Whenever", "MYSQL": "MySQL", "OBJECTIVEC": "Objective-C", "PHP": "PHP", "JAVASCRIPT_UI": "JavaScript", "PYTHON": "Python", "JAVASCRIPT": "JavaScript(Rhino)", "SWIFT_4_1": "Swift-4.1", "vp": "N/A", "TEXTFILE": "Text", "JAVA8": "Java 8", "JAVASCRIPT_NODE": "JavaScript(Node.js)", "RACKET": "Racket", "HTML": "HTML", "SWIFT": "Swift", "RUST": "Rust", "FSHARP": "F#", "C": "C", "TYPESCRIPT": "TypeScript", "ORACLE_DB": "Oracle_Db", "OCAML": "OCaml", "OCTAVE": "Octave", "CLOJURE": "Clojure", "BEFUNGE": "Befunge", "CSS": "CSS", "ERLANG": "Erlang", "JAVA": "Java", "LISP_SBCL": "Lisp (SBCL)", "JULIA": "Julia", "VB": "Visual Basic", "MSSQL": "MSSQL"};
+            var MAP_NAME_TO_LANG = {"Lisp (SBCL)": "LISP_SBCL", "TypeScript": "TYPESCRIPT", "Java": "JAVA", "Scala": "SCALA", "JavaScript": "JAVASCRIPT_UI", "Perl": "PERL", "Lua": "LUA", "JavaScript(Rhino)": "JAVASCRIPT", "MySQL": "MYSQL", "Erlang": "ERLANG", "LOLCODE": "LOLCODE", "HTML": "HTML", "C#": "CSHARP", "R(RScript)": "R", "C++14": "CPP14", "Rust": "RUST", "Octave": "OCTAVE", "Ruby": "RUBY", "Bash": "BASH", "Groovy": "GROOVY", "C": "C", "Python 3": "PYTHON3", "Lisp": "LISP", "Kotlin": "KOTLIN", "Oracle_Db": "ORACLE_DB", "F#": "FSHARP", "N/A": "vp", "C++": "CPP", "Racket": "RACKET", "Objective-C": "OBJECTIVEC", "Swift": "SWIFT", "CSS": "CSS", "D": "D", "Clojure": "CLOJURE", "Befunge": "BEFUNGE", "Java 8": "JAVA8", "Whenever": "WHENEVER", "PostgreSQL": "POSTGRESQL", "Text": "TEXTFILE", "Swift-4.1": "SWIFT_4_1", "OCaml": "OCAML", "Julia": "JULIA", "JavaScript(Node.js)": "JAVASCRIPT_NODE", "Python": "PYTHON", "Pascal": "PASCAL", "Haskell": "HASKELL", "Scala 2.11.8": "SCALA_2118", "C++11": "CPP11", "Go": "GO", "Visual Basic": "VB", "PHP": "PHP", "MSSQL": "MSSQL"};
+        </script>
+
+
+
+        <!-- alljs: static_media/js/jquery-1.7.min.patched.js static_media/js/jquery.color.js static_media/js/jquery.elastic.js static_media/js/ajaxSend.js  static_media/js/jquery.inview.js  static_media/js/tooltip/jquery.tipTip.modified.js  static_media/offline/offline.min.js  static_media/js/watermark.min.js  static_media/history.js?v=0.1/scripts/bundled/html4html5/jquery.history.js  static_media/js/jquery.nicescroll.js  static_media/simplemodal/simplemodal.js static_media/js/jquery.sticky.js static_media/js/pusher.min.js static_media/js/ifvisible.min.js static_media/ghost/ghost.js static_media/feeds/feeds.js static_media/base/progress_bar.js -->
+
+
+
+<script>
+    UPLOADING_TEXT = "Uploading";
+    UPLOADED_TEXT = "Uploaded";
+    SAVING_TEXT = "Saving..";
+    UPLOAD_SUCCESS_MESSAGE = "File saved successfully.";
+    UPLOAD_ERROR_MESSAGE = "An error occured while saving, please try again in sometime.";
+</script>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/alljs.js?vrsn=3" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/base1.0.1.js?vrsn=16" crossorigin="anonymous" ></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/bigpipe/bigpipe.js?vrsn=6" crossorigin="anonymous" ></script>
+
+
+
+<script type="text/javascript">
+var CONFIRM_COMMENT_DELETE = "Are you sure, you want to delete comment?";
+var COMMENT_NOT_DELETED = "Comment could not be deleted!";
+var CONFORM_COMMENT_MARK_SPAM = "Are you sure, you want to mark this comment as spam?";
+var COMMENT_NOT_MARKED_SPAM = "Comment could not be marked as spam!";
+var ENTER_15_CHARS = "Enter atleast 15 characters";
+var JUST_X_MORE = "Just {count} more to go";
+</script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/realtime/pusher_realtime.js?vrsn=2" crossorigin="anonymous" ></script>
+        <script type='text/javascript' src='https://static-fastly.hackerearth.com/static/user_prompts/userprompt.js?v=0.6' crossorigin="anonymous"></script>
+        <script type='text/javascript' src='https://static-fastly.hackerearth.com/static/base/history.js?v=0.4' crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/commentUtils.js?vrsn=1" crossorigin="anonymous" ></script>
+
+
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+        <script src="https://static-fastly.hackerearth.com/static/offline/offline.min.js?v=0.3" crossorigin="anonymous"></script>
+
+
+        <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_SVG"></script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        messageStyle: "none",
+        jax: ["input/TeX", "output/SVG"],
+        tex2jax: {
+            inlineMath: [['$$','$$'], ['\\(', '\\)']],
+            displayMath: [['$$$', '$$$'], ['\\[', '\\]']],
+            preview: "none"
+        },
+        SVG: {
+            useGlobalCache: false
+        },
+    });
+</script>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/mathjax.js?vrsn=0" crossorigin="anonymous" ></script>
+<script type="text/javascript">
+    window.addEventListener("load", function() {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    });
+</script>
+
+        <script>
+            Offline.options = {
+                interceptRequests: false,
+                requests: false,
+            };
+        </script>
+
+
+
+
+
+
+<script>
+
+$(document).ready(function (){
+    $('#header-notif-icon-trigger').click();
+
+
+    $('#live-events-trigger').click();
+
+
+
+
+
+
+
+
+    // show kone ge widget if not visited
+
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var m_links = {};
+    var m_elements = {
+        '#modal-login-form input[type=submit]': 'Modal Email Login',
+        '#modal-signup-form input[type=submit]': 'Modal Email Signup',
+        '.modal-social-login .btn-facebook': 'Modal Facebook Login',
+        '.modal-social-login .btn-google': 'Modal Google Login',
+        '.modal-social-signup .btn-facebook': 'Modal Facebook Signup',
+        '.modal-social-signup .btn-google': 'Modal Google Signup',
+        '.top-banner .login-banner a': 'Signup after banner click',
+    };
+
+    for (var key in m_elements) {
+        $(key).live('click', {'key': key }, function(e) {
+            var key = e.data.key;
+            mixpanel.track('Click', {'name': m_elements[key]});
+        });
+    }
+    for (var key in m_links) {
+        mixpanel.track_links(key, 'Click', {'name': m_links[key]});
+    }
+});
+</script>
+
+
+
+
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/search/search.1.0.js?vrsn=5" crossorigin="anonymous" defer></script>
+
+
+
+
+
+<script type='text/javascript' src='https://static-fastly.hackerearth.com/static/lab/lab.js?v=0.3' crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/gdpr-modal.js?vrsn=1" crossorigin="anonymous" ></script>
+
+
+
+        <script>
+            // Used in search
+            var is_user_logged_in = false;
+        </script>
+
+        <script type="text/javascript" src="https://static-fastly.hackerearth.com/static/js/detect_timezone.js?v=0.2" crossorigin="anonymous"></script>
+
+
+        <script>
+
+            function setTimezoneCookie(detected_user_tz) {
+                /* Sets the detected user timezone as a cookie in the browser.
+                   If someone changes it or removes it, a sanity check is
+                   performed and the cookie is reset.
+
+                   This cookie is set for ready availability of user timezone
+                   in the backend.
+                */
+
+                const USER_TIMEZONE_COOKIE = 'user_tz';
+                // Try to get the existing user timezone cookie stored
+                // in the browser.
+                user_tz = readCookie(USER_TIMEZONE_COOKIE);
+
+                // Flag to determine whether a new cookie has to be created.
+                create_cookie = false;
+
+                if(user_tz) {
+                    if(user_tz !== detected_user_tz) {
+                        // If someone has changed the cookie in some way, we
+                        // set a new cookie.
+                        eraseCookie(USER_TIMEZONE_COOKIE);
+                        create_cookie = true;
+                    }
+                } else {
+                    create_cookie = true;
+                }
+
+                // Create a new cookie if create_cookie flag is set.
+                createCookie(USER_TIMEZONE_COOKIE, detected_user_tz, 1);
+
+            }
+            $(document).ready(function(){
+                var timezone = jstz.determine_timezone(); // Now you have an instance of the TimeZone object.
+                // Set as a cookie in browser for easy access in backend.
+                setTimezoneCookie(timezone.name());
+
+                // Set as a js variable for easy access across frontend.
+                USER_TIMEZONE = timezone.name()
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    $.ajax({
+                        type: "POST",
+                        url:"/users/AJAX/set-timezone/",
+                        data: {
+                        'timezone': timezone.name(),
+                        },
+                    });
+
+            });
+        </script>
+
+
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                //mixpanel delegate links custom method
+                mixpanel.delegate_links = function (parent, selector, event_name, properties) {
+                    properties = properties || {};
+                    parent = parent || document.body;
+                    parent = $(parent);
+                    parent.on('click', selector, function (event) {
+                        var new_tab = event.which === 2 || event.metaKey || event.target.target === '_blank' || this.target === '_blank';
+                        properties.url = event.target.href || this.href;
+                        function callback() {
+                            if (new_tab) {
+                                return;
+                            }
+                            window.location = properties.url;
+                        }
+                        if (!new_tab) {
+                            event.preventDefault();
+                            setTimeout(callback, 300);
+                        }
+                        mixpanel.track(event_name, properties, callback);
+                    });
+                };
+            });
+
+        </script>
+
+
+<script>
+    /*try {
+        $(document).ready(function(){
+            var email = getURLParameter('email');
+            if (email != 'null') {
+                $('#id_email').val(email);
+            }
+        });
+    } catch (err) {
+        console.log(err.message);
+    }*/
+    $(document).ready(function(){
+        $('#id_login').focus();
+    });
+</script>
+
+
+
+        <!-- mixpanel analytics start -->
+        <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);mixpanel.init("4c30b8635363027dfb780d5a61785112");
+        </script>
+        <!-- mixpanel analytics end -->
+        <script type="text/javascript">
+
+
+                    mixpanel.unregister("username");
+                    mixpanel.unregister("email");
+                    mixpanel.unregister("date_of_joining");
+                    mixpanel.unregister("user_bucket");
+                    mixpanel.unregister("company");
+                    mixpanel.unregister("is_recruiter");
+                    mixpanel.register({
+                        "url_path": "/login/"
+                    });
+
+
+        </script>
+
+
+
+
+        <div id="fb-root"></div>
+        <script>
+            <!-- facebook button -->
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+
+            <!-- twitter button -->
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+            <!-- google+ button -->
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+
+
+
+
+
+
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/cookie_consent/cookiebar.css?vrsn=1"/>
+
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/cookie_consent/cookiebar.js?vrsn=1" crossorigin="anonymous" ></script>
+
+
+
+
+
+
+
+
+
+            <!-- Hackerearth Zendesk Widget -->
+
+
+
+
+<link rel="stylesheet" href="https://static-fastly.hackerearth.com/static/base/customer-support-widget.css?vrsn=3"/>
+
+<script>
+    var isRecruiterDashboard = false;
+    var zESettingsRecruiterDashboard = {
+        webWidget: {
+            launcher: {
+                label: {
+                    "en-US": "",
+                    "*": "",
+                }
+            },
+            offset: {
+                horizontal: "-100px", /* To hide actual launcher widget */
+                vertical: "70px"
+            },
+            position: {
+                horizontal: 'right',
+                vertical: 'top'
+            }
+        }
+    };
+
+    var zESettingsDefault = {
+        webWidget: {
+            launcher: {
+                label: {
+                    "en-US": "",
+                    "*": "",
+                }
+            },
+            offset: {
+                horizontal: "-100px", /* To hide actual launcher widget */
+            }
+        }
+    };
+    if(isRecruiterDashboard) {
+       window.zESettings = zESettingsRecruiterDashboard;
+    } else {
+        window.zESettings = zESettingsDefault;
+    }
+    /*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="hackerearth.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+    /*]]>*/
+
+    var ZENDESK_LOCALE = "en-US";
+    var USER_EMAIL = "";
+    var USER_NAME = "";
+    var ATTACHMENT_LABEL = "Attachments (Optional)";
+    var DESCRIPTION_LABEL = "How can we help you, {name}?";
+</script>
+<script type="text/javascript" src="https://static-fastly.hackerearth.com/static/base/customer-support-widget.js?vrsn=7" crossorigin="anonymous" defer></script>
+
+
+    <div class="customer-support-icon">
+        <p>?</p>
+    </div>
+
+
+
+    </body>
+</html>
+
