@@ -7,8 +7,10 @@ namespace DemoApp
     {
         static void Main(string[] args)
         {
-            Dict dict = new Dict();
-            dict.AddItem(); 
+            TestClass tObj = new TestClass();
+            tObj.Add();
+            tObj.AvgValue();
+            tObj.Conversion();
 
         }
     }
