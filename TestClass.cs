@@ -43,9 +43,11 @@ namespace DemoApp
     }
 
 
-    public class MyClass
+   public  class MyClass
     {
-      public  void Show()
+
+
+      public virtual  void Show()
         {
             Console.WriteLine($"myclass show method");
         }
@@ -53,7 +55,7 @@ namespace DemoApp
 
     public class MyClass1 : MyClass
     {
-      public  void Show()
+      public override  void Show()
         {
             Console.WriteLine("myclass1 show method");
         }

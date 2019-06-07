@@ -13,7 +13,9 @@ namespace DemoApp
             Console.WriteLine(i + j);
 
             MyClass1 m = new MyClass1();
-            m.Show();
+            m.Show(); // class1
+            MyClass m1 = new MyClass1();
+            m1.Show(); // class1
             Console.Read();
 
         }
