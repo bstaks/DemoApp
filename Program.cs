@@ -10,8 +10,10 @@ namespace DemoApp
 
             int i = (int)EnumValues.customerParent;
             int j = (int)EnumValues.customer;
-
             Console.WriteLine(i + j);
+
+            MyClass1 m = new MyClass1();
+            m.Show();
             Console.Read();
 
         }

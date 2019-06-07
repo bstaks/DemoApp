@@ -41,4 +41,21 @@ namespace DemoApp
             Console.Read();
         }
     }
+
+
+    public class MyClass
+    {
+      public  void Show()
+        {
+            Console.WriteLine($"myclass show method");
+        }
+    }
+
+    public class MyClass1 : MyClass
+    {
+      public  void Show()
+        {
+            Console.WriteLine("myclass1 show method");
+        }
+    }
 }

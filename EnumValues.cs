@@ -9,6 +9,8 @@ namespace DemoApp
         customer = 4,
         merchant = -3,
         merchantParent,
+        merchant1,
+        merchant2,
         customerParent = 4,
 
     }
