@@ -7,10 +7,16 @@ namespace DemoApp
     {
         static void Main(string[] args)
         {
-            TestClass tObj = new TestClass();
-            tObj.Add();
-            tObj.AvgValue();
-            tObj.Conversion();
+
+            int i = (int)EnumValues.customerParent;
+            int j = (int)EnumValues.customer;
+            Console.WriteLine(i + j);
+
+            MyClass1 m = new MyClass1();
+            m.Show(); // class1
+            MyClass m1 = new MyClass1();
+            m1.Show(); // class1
+            Console.Read();
 
         }
     }

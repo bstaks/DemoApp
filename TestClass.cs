@@ -41,4 +41,23 @@ namespace DemoApp
             Console.Read();
         }
     }
+
+
+   public  class MyClass
+    {
+
+
+      public virtual  void Show()
+        {
+            Console.WriteLine($"myclass show method");
+        }
+    }
+
+    public class MyClass1 : MyClass
+    {
+      public override  void Show()
+        {
+            Console.WriteLine("myclass1 show method");
+        }
+    }
 }
